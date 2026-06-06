@@ -1,5 +1,7 @@
 # Narratological Algorithmic Lenses
 
+[![CI](https://github.com/organvm-i-theoria/narratological-algorithmic-lenses/actions/workflows/ci.yml/badge.svg)](https://github.com/organvm-i-theoria/narratological-algorithmic-lenses/actions/workflows/ci.yml)
+
 A computational engine for formalizing, analyzing, and applying narrative craft.
 
 This system transforms abstract storytelling principles—from **Aristotle's** *Poetics* to **Phoebe Waller-Bridge's** *Fleabag*—into executable algorithms that can diagnose scripts, identify structural weaknesses, and simulate "Script Doctor" consultations.

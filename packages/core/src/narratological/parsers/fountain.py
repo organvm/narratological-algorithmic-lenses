@@ -160,12 +160,27 @@ class FountainParser:
         return summary or "Scene action"
 
 
-def parse_fountain(path: Path) -> Script:
-    """Parse a .fountain file into a Script model."""
-    if not path.exists():
-        raise FileNotFoundError(f"File not found: {path}")
+def parse_fountain(source: Path | str) -> Script:
+    """Parse a .fountain file or direct text content into a Script model."""
+    if isinstance(source, Path):
+        if not source.exists():
+            raise FileNotFoundError(f"File not found: {source}")
+        text = source.read_text(encoding="utf-8")
+        title = source.stem.replace("_", " ").title()
+    else:
+        # Check if source is a string representing a path that exists
+        try:
+            potential_path = Path(source)
+            if len(source) < 260 and potential_path.exists() and potential_path.is_file():
+                text = potential_path.read_text(encoding="utf-8")
+                title = potential_path.stem.replace("_", " ").title()
+            else:
+                text = source
+                title = "Untitled Script"
+        except Exception:
+            text = source
+            title = "Untitled Script"
 
-    text = path.read_text(encoding="utf-8")
     parser = FountainParser()
     scenes, characters = parser.parse(text)
 
@@ -173,7 +188,7 @@ def parse_fountain(path: Path) -> Script:
     page_count = max(1, text.count("\n") // 55)
 
     return Script(
-        title=path.stem.replace("_", " ").title(),
+        title=title,
         format="Fountain",
         page_count=page_count,
         scene_count=len(scenes),

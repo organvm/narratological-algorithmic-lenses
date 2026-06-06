@@ -25,16 +25,31 @@ jobs:
       - name: Sync Python dependencies
         run: uv sync
 
+      - name: Run Ruff check
+        run: uv run ruff check .
+
+      - name: Run Mypy type-check
+        run: uv run mypy .
+
       - name: Run Python test gate
         run: uv run pytest
+
+      - name: Run API smoke tests
+        run: uv run python scripts/test_api_smoke.py
+
+      - name: Run MCP smoke tests
+        run: uv run python scripts/test_mcp_smoke.py
 
       - name: Set up Node.js
         uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
         with:
           node-version: '20'
 
-      - name: Install web dependencies
-        run: npm ci -w packages/web
+      - name: Install Node dependencies
+        run: npm ci
 
       - name: Run web tests
         run: npm run web:test
+
+      - name: Build web application
+        run: npm run web:build

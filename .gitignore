@@ -93,3 +93,6 @@ logs/
 # Temporary files
 tmp/
 temp/
+
+# Gemini Workspace Tooling
+.gemini/worktrees/

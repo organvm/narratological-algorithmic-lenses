@@ -72,10 +72,7 @@ def load_compendium(path: str | PathLike[str] | None = None) -> Compendium:
         FileNotFoundError: If the compendium file cannot be found.
         ValidationError: If the JSON doesn't match the expected schema.
     """
-    if path:
-        file_path = Path(path)
-    else:
-        file_path = _get_compendium_path()
+    file_path: Path | None = Path(path) if path else _get_compendium_path()
 
     if file_path is None or not Path(file_path).exists():
         raise FileNotFoundError(

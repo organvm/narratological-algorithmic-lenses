@@ -1,8 +1,9 @@
+import json
 import subprocess
+import sys
 import time
 import urllib.request
-import json
-import sys
+
 
 def main():
     print("Starting FastAPI server...")
@@ -11,10 +12,10 @@ def main():
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE
     )
-    
+
     # Wait for server to start
     time.sleep(3)
-    
+
     # Check if process is still running
     if proc.poll() is not None:
         print("Error: FastAPI server failed to start.")
@@ -22,7 +23,7 @@ def main():
         print("STDOUT:", stdout.decode())
         print("STDERR:", stderr.decode())
         sys.exit(1)
-        
+
     endpoints = [
         ("Root", "/"),
         ("Health", "/health"),
@@ -30,7 +31,7 @@ def main():
         ("Studies", "/studies/"),
         ("Diagnostic Metrics", "/diagnostics/metrics")
     ]
-    
+
     success = True
     for name, path in endpoints:
         url = f"http://127.0.0.1:8000{path}"
@@ -49,12 +50,12 @@ def main():
         except Exception as e:
             print(f"FAIL with exception: {e}")
             success = False
-            
+
     print("Stopping FastAPI server...")
     proc.terminate()
     proc.wait()
     print("Server stopped.")
-    
+
     if success:
         print("All API endpoints smoke-tested successfully!")
         sys.exit(0)

@@ -10,6 +10,7 @@ from typing import Any
 
 from fastmcp import FastMCP
 
+from narratological.diagnostics.models import DiagnosticContext
 from narratological.diagnostics.runner import create_diagnostic_runner
 from narratological.llm.providers import get_provider
 from narratological.llm.script_doctor import ScriptDoctorAnalyst
@@ -70,7 +71,7 @@ def diagnose_script(
     runner = create_diagnostic_runner(llm)
 
     # Run analysis
-    context = AnalystContext.from_script(script)
+    context = DiagnosticContext.from_script(script)
     report = runner.run_all(context)
 
     return report.model_dump()
