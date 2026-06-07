@@ -37,7 +37,7 @@ Practitioner feedback, Scholar analysis, Student learning
 
 ## Current Reach
 
-- **Public repository:** github.com/4444J99/narratological-algorithmic-lenses
+- **Public repository:** github.com/a-organvm/narratological-algorithmic-lenses
 - **Part of:** ORGANVM eight-organ ecosystem (ORGAN-I Theory layer)
 - **Downstream consumer:** `organvm-ii-poiesis/art-from--narratological-algorithmic-lenses`
 

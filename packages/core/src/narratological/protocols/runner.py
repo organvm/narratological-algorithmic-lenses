@@ -61,6 +61,7 @@ class ProtocolRunner:
             Dict containing individual reports and the consolidated master Markdown.
         """
         spec = get_protocol(level)
+        level = spec.level
         results: dict[str, Any] = {}
         markdown_sections: list[str] = []
 

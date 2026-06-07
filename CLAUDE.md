@@ -234,7 +234,7 @@ See `specs/07-skill-documentation/SKILL.md` for complete methodology.
 ## System Context (auto-generated — do not edit)
 
 **Organ:** ORGAN-I (Theory) | **Tier:** standard | **Status:** GRADUATED
-**Org:** `organvm-i-theoria` | **Repo:** `narratological-algorithmic-lenses`
+**Org:** `a-organvm` | **Repo:** `narratological-algorithmic-lenses`
 
 ### Edges
 - **Produces** → `organvm-ii-poiesis/art-from--narratological-algorithmic-lenses`: dependency

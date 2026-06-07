@@ -1,3 +1,8 @@
+# Preserved advanced CodeQL workflow.
+#
+# GitHub default CodeQL setup is active for this repository. Keeping this file
+# under .github/workflows caused rejected duplicate advanced analyses, so it is
+# archived here until the repo intentionally switches away from default setup.
 name: CodeQL
 on:
   push:

@@ -1,6 +1,6 @@
 # Narratological Algorithmic Lenses
 
-[![CI](https://github.com/organvm-i-theoria/narratological-algorithmic-lenses/actions/workflows/ci.yml/badge.svg)](https://github.com/organvm-i-theoria/narratological-algorithmic-lenses/actions/workflows/ci.yml)
+[![CI](https://github.com/a-organvm/narratological-algorithmic-lenses/actions/workflows/ci.yml/badge.svg)](https://github.com/a-organvm/narratological-algorithmic-lenses/actions/workflows/ci.yml)
 
 A computational engine for formalizing, analyzing, and applying narrative craft.
 

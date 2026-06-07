@@ -1,0 +1,115 @@
+Preservation patch for local-only worktree:
+
+- Worktree: .gemini/worktrees/milestone-4-cicd
+- Branch: milestone-4-cicd
+- HEAD: 32d237aa138f044952f8dfc5131ad6f553acdd21
+- Status before preservation: two modified smoke-test scripts
+- Branch HEAD is not an ancestor of main; branch was preserved remotely as
+  origin/codex/preserve-milestone-4-cicd-2026-06-07 before deleting local-only
+  worktree manifestation.
+- Literal trailing spaces from removed lines are not retained in this transcript;
+  retaining them would fail the repository diff hygiene gate.
+
+diff --git a/scripts/test_api_smoke.py b/scripts/test_api_smoke.py
+index 301b070..25b48ad 100644
+--- a/scripts/test_api_smoke.py
++++ b/scripts/test_api_smoke.py
+@@ -1,8 +1,9 @@
++import json
+ import subprocess
++import sys
+ import time
+ import urllib.request
+-import json
+-import sys
++
+
+ def main():
+     print("Starting FastAPI server...")
+@@ -11,10 +12,10 @@ def main():
+         stdout=subprocess.PIPE,
+         stderr=subprocess.PIPE
+     )
+-
++
+     # Wait for server to start
+     time.sleep(3)
+-
++
+     # Check if process is still running
+     if proc.poll() is not None:
+         print("Error: FastAPI server failed to start.")
+@@ -22,7 +23,7 @@ def main():
+         print("STDOUT:", stdout.decode())
+         print("STDERR:", stderr.decode())
+         sys.exit(1)
+-
++
+     endpoints = [
+         ("Root", "/"),
+         ("Health", "/health"),
+@@ -30,7 +31,7 @@ def main():
+         ("Studies", "/studies/"),
+         ("Diagnostic Metrics", "/diagnostics/metrics")
+     ]
+-
++
+     success = True
+     for name, path in endpoints:
+         url = f"http://127.0.0.1:8000{path}"
+@@ -49,12 +50,12 @@ def main():
+         except Exception as e:
+             print(f"FAIL with exception: {e}")
+             success = False
+-
++
+     print("Stopping FastAPI server...")
+     proc.terminate()
+     proc.wait()
+     print("Server stopped.")
+-
++
+     if success:
+         print("All API endpoints smoke-tested successfully!")
+         sys.exit(0)
+diff --git a/scripts/test_mcp_smoke.py b/scripts/test_mcp_smoke.py
+index 33b0084..8197371 100644
+--- a/scripts/test_mcp_smoke.py
++++ b/scripts/test_mcp_smoke.py
+@@ -1,23 +1,24 @@
+-import sys
+ import os
++import sys
+
+ # Add package source directories to path
+ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../packages/core/src")))
+ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../packages/mcp/src")))
+
+-from narratological_mcp.server import mcp, get_available_studies, search_axioms
++from narratological_mcp.server import get_available_studies, mcp, search_axioms
++
+
+ def main():
+     print("Testing MCP tool: get_available_studies...")
+     studies = get_available_studies()
+     print(f"PASS: Found {len(studies)} studies.")
+-
++
+     print("Testing MCP tool: search_axioms...")
+     axioms = search_axioms("mimesis")
+     print(f"PASS: Found {len(axioms)} axioms matching 'mimesis'.")
+     for a in axioms:
+         print(f" - [{a['study_id']}] {a['name']}: {a['statement']}")
+-
++
+     print("Checking tool registration on FastMCP instance...")
+     # FastMCP typically exposes registered tools on get_tools()
+     try:
+@@ -30,7 +31,7 @@ def main():
+             tool_names = [t.name for t in tools]
+         except AttributeError:
+             tool_names = []
+-
++
+     print(f"Registered tools: {tool_names}")
+     print("All MCP server tools smoke-tested successfully!")

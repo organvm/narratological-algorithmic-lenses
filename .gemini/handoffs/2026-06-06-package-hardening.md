@@ -13,7 +13,7 @@ Milestone 3 (Package Hardening) is completely finished. All system packages (CLI
 - **Mock Provider Hardened**: Fixed a validation failure in `MockProvider`'s `_generate_minimal_data` where integer ratings were default-generated as `0`, violating Pydantic constraints like `ge=1`. It now defaults to the schema minimum or `1`/`1.0` respectively.
 
 ## Next Actions (Milestone 4: CI/CD Pipeline)
-1. **GitHub Workflows**: Inspect and ensure `.github/workflows/ci-python.yml` runs successfully (linting, type-checking, and tests).
+1. **GitHub Workflows**: Inspect and ensure `.github/workflows/ci.yml` runs successfully (linting, type-checking, and tests).
 2. **Web Build CI**: Integrate web build/test steps into the CI workflow.
 3. **MCP Server CI**: Integrate MCP server test validation into the CI workflow.
 4. **README Badges**: Update the README badge row to correctly reflect the real CI status.

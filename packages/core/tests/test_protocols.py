@@ -108,3 +108,16 @@ def test_protocol_runner_p3(simple_script, mock_provider):
     assert "## Structural Architecture" in results["combined_markdown"]
     assert "## Character Atlas" in results["combined_markdown"]
     assert "## Diagnostic Report" in results["combined_markdown"]
+
+
+def test_protocol_runner_normalizes_string_level(simple_script, mock_provider):
+    """Lowercase string levels should execute the selected protocol, not an empty shell."""
+    runner = ProtocolRunner(mock_provider)
+    results = runner.run(simple_script, "p3")
+
+    assert "coverage" in results
+    assert "structural" in results
+    assert "character_atlas" in results
+    assert "diagnostic" in results
+    assert "revision_roadmap" in results
+    assert "combined_markdown" in results
