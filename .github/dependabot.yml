@@ -1,0 +1,35 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directories:
+      - "/"
+      - "/packages/vscode"
+      - "/packages/web"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 3
+    groups:
+      npm-deps:
+        patterns: ["*"]
+  - package-ecosystem: "pip"
+    directories:
+      - "/"
+      - "/packages/api"
+      - "/packages/cli"
+      - "/packages/core"
+      - "/packages/mcp"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 3
+    groups:
+      pip-deps:
+        patterns: ["*"]
+  - package-ecosystem: "github-actions"
+    directories:
+      - "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 3
+    groups:
+      github-actions-deps:
+        patterns: ["*"]
