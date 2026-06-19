@@ -16,6 +16,10 @@ class FountainParser:
     """State-machine parser for Fountain syntax."""
 
     def __init__(self) -> None:
+        self._reset()
+
+    def _reset(self) -> None:
+        """Reset parser state before parsing a new document."""
         self.scenes: list[Scene] = []
         self.characters: set[str] = set()
         self._current_scene: Scene | None = None
@@ -24,6 +28,7 @@ class FountainParser:
 
     def parse(self, text: str) -> tuple[list[Scene], list[Character]]:
         """Parse fountain text into scenes and characters."""
+        self._reset()
         lines = text.splitlines()
 
         # Ensure we capture the final scene

@@ -6,7 +6,7 @@ import hashlib
 import json
 import os
 import threading
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from enum import StrEnum
 from typing import Any
 
@@ -215,7 +215,7 @@ class InMemoryQuotaStore:
         self._lock = threading.Lock()
 
     def _period(self, now: datetime | None = None) -> str:
-        current = now or datetime.now(timezone.utc)
+        current = now or datetime.now(UTC)
         return current.strftime("%Y-%m")
 
     def snapshot(self, account: ApiAccount) -> QuotaSnapshot:

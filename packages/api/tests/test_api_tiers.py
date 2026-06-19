@@ -9,7 +9,6 @@ from fastapi.testclient import TestClient
 
 from narratological_api.auth import quota_store
 
-
 SCRIPT = """INT. WRITERS ROOM - DAY
 
 A writer pins beat cards to a wall.
