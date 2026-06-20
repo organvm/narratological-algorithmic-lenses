@@ -3,6 +3,7 @@ import StudyExplorer from './components/StudyExplorer'
 import AlgorithmViewer from './components/AlgorithmViewer'
 import DiagnosticRunner from './components/DiagnosticRunner'
 import { ScriptDoctorWorkbench } from './components/ScriptDoctorWorkbench'
+import StatusDashboard from './components/StatusDashboard'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <header className="app-header">
         <h1>Narratological Algorithmic Lenses</h1>
         <nav>
+          <Link to="/dashboard">Dashboard</Link>
           <Link to="/">Studies</Link>
           <Link to="/algorithms">Algorithms</Link>
           <Link to="/diagnostics">Diagnostics</Link>
@@ -19,6 +21,7 @@ function App() {
 
       <main className="app-main">
         <Routes>
+          <Route path="/dashboard" element={<StatusDashboard />} />
           <Route path="/" element={<StudyExplorer />} />
           <Route path="/study/:studyId" element={<StudyExplorer />} />
           <Route path="/algorithms" element={<AlgorithmViewer />} />

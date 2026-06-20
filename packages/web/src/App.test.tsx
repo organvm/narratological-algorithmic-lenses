@@ -13,4 +13,15 @@ describe('App', () => {
 
     expect(html).toContain('Narratological Algorithmic Lenses')
   })
+
+  it('exposes the dashboard route in navigation', () => {
+    const html = renderToString(
+      <StaticRouter location='/dashboard'>
+        <App />
+      </StaticRouter>,
+    )
+
+    expect(html).toContain('Dashboard')
+    expect(html).toContain('Loading dashboard...')
+  })
 })

@@ -71,6 +71,19 @@ export interface SequencePair {
   contrasts: string[]
 }
 
+export interface ApiStats {
+  study_count: number
+  total_axioms: number
+  total_algorithms: number
+  total_diagnostic_questions: number
+  categories: string[]
+  sequence_pairs: number
+}
+
+export interface HealthStatus {
+  status: string
+}
+
 async function fetchJson<T>(url: string): Promise<T> {
   const response = await fetch(url)
   if (!response.ok) {
@@ -106,6 +119,10 @@ export async function fetchSequencePairs(): Promise<SequencePair[]> {
   return fetchJson<SequencePair[]>(`${API_BASE}/studies/pairs`)
 }
 
+export async function fetchHealth(): Promise<HealthStatus> {
+  return fetchJson<HealthStatus>(`${API_BASE}/health`)
+}
+
 export async function searchAxioms(query: string): Promise<Array<{
   study_id: string
   axiom: Axiom
@@ -120,15 +137,8 @@ export async function searchAlgorithms(query: string): Promise<Array<{
   return fetchJson(`${API_BASE}/studies/search/algorithms?q=${encodeURIComponent(query)}`)
 }
 
-export async function fetchApiStats(): Promise<{
-  study_count: number
-  total_axioms: number
-  total_algorithms: number
-  total_diagnostic_questions: number
-  categories: string[]
-  sequence_pairs: number
-}> {
-  return fetchJson(`${API_BASE}/stats`)
+export async function fetchApiStats(): Promise<ApiStats> {
+  return fetchJson<ApiStats>(`${API_BASE}/stats`)
 }
 
 /**
