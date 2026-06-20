@@ -271,6 +271,17 @@ async def analyze_with_narrative_suite(
     from narratological.parsers.fountain import parse_fountain
 
     entitlements = account.entitlements
+    if not account.premium_access_active:
+        raise HTTPException(
+            status_code=status.HTTP_402_PAYMENT_REQUIRED,
+            detail={
+                "code": "SUBSCRIPTION_INACTIVE",
+                "message": "The paid subscription for this license is not active.",
+                "tier": account.tier.value,
+                "subscription_status": account.subscription_status,
+            },
+        )
+
     if len(request.content) > entitlements.max_input_chars:
         raise HTTPException(
             status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,

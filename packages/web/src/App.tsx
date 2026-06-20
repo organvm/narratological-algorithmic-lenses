@@ -3,6 +3,7 @@ import StudyExplorer from './components/StudyExplorer'
 import AlgorithmViewer from './components/AlgorithmViewer'
 import DiagnosticRunner from './components/DiagnosticRunner'
 import { ScriptDoctorWorkbench } from './components/ScriptDoctorWorkbench'
+import BillingPage from './components/BillingPage'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Link to="/algorithms">Algorithms</Link>
           <Link to="/diagnostics">Diagnostics</Link>
           <Link to="/script-doctor">Script Doctor</Link>
+          <Link to="/billing">Billing</Link>
         </nav>
       </header>
 
@@ -25,6 +27,8 @@ function App() {
           <Route path="/algorithms/:studyId/:algoName" element={<AlgorithmViewer />} />
           <Route path="/diagnostics" element={<DiagnosticRunner />} />
           <Route path="/script-doctor" element={<ScriptDoctorWorkbench />} />
+          <Route path="/billing" element={<BillingPage />} />
+          <Route path="/billing/success" element={<BillingPage />} />
         </Routes>
       </main>
 

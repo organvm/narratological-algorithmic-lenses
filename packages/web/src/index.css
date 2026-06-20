@@ -177,3 +177,172 @@
   padding: 1rem;
   color: #f44336;
 }
+
+/* Billing */
+.billing-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.billing-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.billing-header p,
+.tier-card p,
+.license-panel p {
+  color: #aaa;
+}
+
+.checkout-controls,
+.license-checker {
+  background: #2a2a2a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.checkout-controls {
+  display: grid;
+  gap: 0.5rem;
+  max-width: 420px;
+}
+
+.checkout-controls label {
+  color: #ccc;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.checkout-controls input,
+.license-checker input {
+  min-height: 44px;
+  width: 100%;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background: #1a1a1a;
+  color: #f3f3f3;
+  padding: 0.65rem 0.8rem;
+}
+
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.tier-card {
+  min-height: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  background: #2a2a2a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.tier-price {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.tier-price span {
+  color: #999;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.tier-support {
+  min-height: 48px;
+}
+
+.tier-card button,
+.license-checker button {
+  min-height: 44px;
+  border: 0;
+  border-radius: 6px;
+  background: #4caf50;
+  color: #081108;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.tier-card button:disabled,
+.license-checker button:disabled {
+  background: #555;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.tier-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  width: fit-content;
+  border: 1px solid #4b6f91;
+  border-radius: 999px;
+  color: #b9d8f3;
+  padding: 0 0.85rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.license-panel {
+  display: grid;
+  gap: 1rem;
+  background: #142a20;
+  border: 1px solid #2f7d57;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.license-panel code {
+  overflow-wrap: anywhere;
+  border-radius: 6px;
+  background: #07120d;
+  color: #baf0ce;
+  padding: 0.85rem;
+}
+
+.license-checker {
+  display: grid;
+  gap: 1rem;
+}
+
+.license-checker-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+}
+
+.license-checker-row button {
+  min-width: 96px;
+}
+
+.subscription-result {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+  color: #ddd;
+}
+
+.subscription-result span {
+  border: 1px solid #444;
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+  color: #bbb;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 560px) {
+  .license-checker-row {
+    grid-template-columns: 1fr;
+  }
+}

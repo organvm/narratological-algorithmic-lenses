@@ -6,7 +6,7 @@ from typing import Any
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from narratological_api.routes import analysis, diagnostics, studies
+from narratological_api.routes import analysis, billing, diagnostics, studies
 
 
 @asynccontextmanager
@@ -40,6 +40,7 @@ app.add_middleware(
 app.include_router(studies.router, prefix="/studies", tags=["studies"])
 app.include_router(analysis.router, prefix="/analysis", tags=["analysis"])
 app.include_router(diagnostics.router, prefix="/diagnostics", tags=["diagnostics"])
+app.include_router(billing.router, prefix="/billing", tags=["billing"])
 
 
 @app.get("/")

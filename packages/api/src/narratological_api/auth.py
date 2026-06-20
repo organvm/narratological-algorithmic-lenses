@@ -23,6 +23,13 @@ class AccessTier(StrEnum):
     STUDIO = "studio"
 
 
+class AccountSource(StrEnum):
+    """Where an authenticated API account came from."""
+
+    STATIC = "static"
+    BILLING = "billing"
+
+
 class TierEntitlements(BaseModel):
     """Limits and feature gates attached to an access tier."""
 
@@ -85,11 +92,25 @@ class ApiAccount(BaseModel):
     tier: AccessTier
     label: str | None = None
     key_fingerprint: str
+    source: AccountSource = AccountSource.STATIC
+    subscription_status: str | None = None
+    billing_provider: str | None = None
+    external_customer_id: str | None = None
+    external_subscription_id: str | None = None
 
     @property
     def entitlements(self) -> TierEntitlements:
         """Return the entitlements attached to this account's tier."""
         return TIER_ENTITLEMENTS[self.tier]
+
+    @property
+    def premium_access_active(self) -> bool:
+        """Return whether the account can use paid-tier entitlements."""
+        if self.tier == AccessTier.FREE_TRIAL:
+            return True
+        if self.source == AccountSource.STATIC:
+            return self.subscription_status not in {"canceled", "inactive", "past_due", "unpaid"}
+        return self.subscription_status in {"active", "trialing"}
 
 
 class QuotaSnapshot(BaseModel):
@@ -196,11 +217,17 @@ def load_api_accounts() -> dict[str, ApiAccount]:
     key:creator:acct,key2:studio:studio-acct
     """
     raw = os.environ.get("NARRATOLOGICAL_API_KEYS", "").strip()
-    if not raw:
-        return {}
-    if raw.startswith("{"):
-        return _parse_json_api_keys(raw)
-    return _parse_shorthand_api_keys(raw)
+    accounts: dict[str, ApiAccount] = {}
+    if raw:
+        if raw.startswith("{"):
+            accounts.update(_parse_json_api_keys(raw))
+        else:
+            accounts.update(_parse_shorthand_api_keys(raw))
+
+    from narratological_api.billing import billing_license_store
+
+    accounts.update(billing_license_store.load_api_accounts())
+    return accounts
 
 
 class InMemoryQuotaStore:

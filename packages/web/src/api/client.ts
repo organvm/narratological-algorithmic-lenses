@@ -71,8 +71,8 @@ export interface SequencePair {
   contrasts: string[]
 }
 
-async function fetchJson<T>(url: string): Promise<T> {
-  const response = await fetch(url)
+async function fetchJson<T>(url: string, init?: RequestInit): Promise<T> {
+  const response = await fetch(url, init)
   if (!response.ok) {
     throw new Error(`API error: ${response.statusText}`)
   }
@@ -129,6 +129,81 @@ export async function fetchApiStats(): Promise<{
   sequence_pairs: number
 }> {
   return fetchJson(`${API_BASE}/stats`)
+}
+
+export interface TierEntitlements {
+  tier: 'free_trial' | 'creator' | 'studio'
+  label: string
+  price_monthly_usd: number
+  monthly_quota: number
+  max_input_chars: number
+  algorithm_limit: number
+  full_suite: boolean
+  support: string
+}
+
+export interface BillingTier {
+  tier: 'free_trial' | 'creator' | 'studio'
+  entitlements: TierEntitlements
+  checkout_available: boolean
+}
+
+export interface CheckoutSession {
+  provider: 'stripe'
+  checkout_session_id: string
+  checkout_url: string
+  tier: 'creator' | 'studio'
+  mode: 'subscription'
+}
+
+export interface CheckoutLicense {
+  license_key: string
+  account_id: string
+  tier: 'creator' | 'studio'
+  status: string
+  license_fingerprint: string
+}
+
+export interface SubscriptionStatus {
+  account_id: string
+  tier: 'free_trial' | 'creator' | 'studio'
+  entitlements: TierEntitlements
+  active: boolean
+  source: string
+  subscription_status: string | null
+  billing_provider: string | null
+  license_fingerprint: string
+}
+
+export async function fetchBillingTiers(): Promise<BillingTier[]> {
+  return fetchJson<BillingTier[]>(`${API_BASE}/billing/tiers`)
+}
+
+export async function createCheckoutSession(
+  tier: 'creator' | 'studio',
+  email?: string,
+): Promise<CheckoutSession> {
+  return fetchJson<CheckoutSession>(`${API_BASE}/billing/checkout`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ tier, email: email || undefined }),
+  })
+}
+
+export async function fetchCheckoutLicense(sessionId: string): Promise<CheckoutLicense> {
+  return fetchJson<CheckoutLicense>(
+    `${API_BASE}/billing/checkout-sessions/${encodeURIComponent(sessionId)}/license`,
+  )
+}
+
+export async function fetchSubscriptionStatus(apiKey: string): Promise<SubscriptionStatus> {
+  return fetchJson<SubscriptionStatus>(`${API_BASE}/billing/subscription`, {
+    headers: {
+      'X-API-Key': apiKey,
+    },
+  })
 }
 
 /**

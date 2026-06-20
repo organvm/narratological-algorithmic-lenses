@@ -128,10 +128,11 @@ uv sync
 npm install
 ```
 
-### API Key Setup For Gated Routes
+### API Key And Billing Setup For Gated Routes
 
-The public commercial sample endpoint requires `NARRATOLOGICAL_API_KEYS` in the
-API process. Use development keys locally; do not commit live keys.
+The public commercial sample endpoint accepts either operator-configured API keys
+or Stripe-issued subscription licenses. Use development keys locally; do not
+commit live keys.
 
 ```bash
 export NARRATOLOGICAL_API_KEYS='trial-key:free_trial:trial-local,creator-key:creator:creator-local,studio-key:studio:studio-local'
@@ -147,6 +148,20 @@ export NARRATOLOGICAL_API_KEYS='{
   "studio-example-key": {"tier": "studio", "account_id": "studio-local"}
 }'
 ```
+
+For paid self-serve checkout, configure Stripe in the API process:
+
+```bash
+export NARRATOLOGICAL_STRIPE_SECRET_KEY='sk_test_...'
+export NARRATOLOGICAL_STRIPE_WEBHOOK_SECRET='whsec_...'
+export NARRATOLOGICAL_STRIPE_CREATOR_PRICE_ID='price_creator_monthly'
+export NARRATOLOGICAL_STRIPE_STUDIO_PRICE_ID='price_studio_monthly'
+```
+
+Stripe checkout is exposed at `POST /billing/checkout`, webhooks land at
+`POST /billing/webhooks/stripe`, and completed sessions expose the generated API
+license at `GET /billing/checkout-sessions/{session_id}/license`. The web
+dashboard includes `/billing` and `/billing/success` screens for the same flow.
 
 ## Usage
 
@@ -217,9 +232,10 @@ curl -X POST http://localhost:8000/analysis/narrative-suite \
   }'
 ```
 
-The current endpoint validates the key, enforces tier limits, debits monthly
-quota, parses the input lightly, and returns the selected suite manifest. It is
-the synchronous integration target for the future async LLM execution pipeline.
+The current endpoint validates the key or billing license, enforces active paid
+subscriptions for premium tiers, enforces tier limits, debits monthly quota,
+parses the input lightly, and returns the selected suite manifest. It is the
+synchronous integration target for the future async LLM execution pipeline.
 
 ### Web Dashboard
 
@@ -240,7 +256,9 @@ npm run web:test
 ## Pricing And Monetization
 
 The implemented tier model lives in `packages/api/src/narratological_api/auth.py`
-and is documented in [docs/api-pricing.md](docs/api-pricing.md).
+and the Stripe checkout/license flow lives in
+`packages/api/src/narratological_api/billing.py`. Both are documented in
+[docs/api-pricing.md](docs/api-pricing.md).
 
 | Tier | Price | Monthly quota | Request size | Suite access | Intended user |
 | --- | ---: | ---: | ---: | --- | --- |
@@ -257,10 +275,10 @@ Monetization is centered on API access:
 - **Studio** supports higher-volume script intake, larger documents, batch review,
   and priority support.
 
-The quota store is currently process-local and resets when the API process
-restarts. Before charging external users, replace `InMemoryQuotaStore` with a
-shared billing or usage ledger such as Redis, Postgres, or a billing provider
-meter.
+The quota and billing license stores are currently process-local and reset when
+the API process restarts. Before charging external users, replace
+`InMemoryQuotaStore` and `InMemoryBillingLicenseStore` with a shared billing or
+usage ledger such as Redis, Postgres, or a billing provider meter.
 
 ## Repository Layout
 
