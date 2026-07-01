@@ -96,3 +96,8 @@ temp/
 
 # Gemini Workspace Tooling
 .gemini/worktrees/
+
+# removed inadvertently-committed local session artifacts (PII containment)
+specs/00-chat-transcripts/desktop/claude-desktop-memories.md
+specs/11-el-series/el-project-manifest.md
+specs/00-chat-transcripts/session-transcript.jsonl
