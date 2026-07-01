@@ -6,8 +6,8 @@ import re
 from datetime import datetime
 from pathlib import Path
 
-CONVERSATIONS_JSON = Path("/Users/4jp/Workspace/intake/data-2026-02-16-00-20-00-batch-0000/conversations.json")
-REPO_ROOT = Path("/Users/4jp/world/realm/create/org/liminal/repo/narratological-algorithmic-lenses")
+CONVERSATIONS_JSON = Path("~/Workspace/intake/data-2026-02-16-00-20-00-batch-0000/conversations.json")
+REPO_ROOT = Path("~/world/realm/create/org/liminal/repo/narratological-algorithmic-lenses")
 OUTPUT_DIR = REPO_ROOT / "specs/00-chat-transcripts/desktop"
 ARTIFACTS_DIR = OUTPUT_DIR / "artifacts"
 

@@ -1,6 +1,6 @@
 # EL: Draft Evolution Matrix (D1 → D4 → D7)
 
-**Screenplay by Anthony Padavano**
+**Screenplay by [name redacted]**
 **Analysis Date: February 2026**
 
 ---

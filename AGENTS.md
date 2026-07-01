@@ -1,6 +1,6 @@
 # Repository Guidelines
 
-Global policy: /Users/4jp/AGENTS.md applies and cannot be overridden.
+Global policy: ~/AGENTS.md applies and cannot be overridden.
 
 ## Project Structure & Module Organization
 - `specs/` holds the narrative source material, templates, and JSON exports used by the software layer.

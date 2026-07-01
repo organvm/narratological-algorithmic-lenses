@@ -1,9 +1,9 @@
 Title: _open view_
 Credit: Written by
-Author: Anthony James Padavano
+Author: [name redacted]
 Info:
-	Padavano.Anthony@GMAIL.COM
-	347.244.1405
+	[email redacted]
+	[phone redacted]
 
 BLACK SCREEN...
 

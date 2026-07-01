@@ -5,8 +5,8 @@ import json
 import sys
 from pathlib import Path
 
-PROJECTS_JSON = Path("/Users/4jp/Workspace/intake/data-2026-02-16-00-20-00-batch-0000/projects.json")
-REPO_ROOT = Path("/Users/4jp/world/realm/create/org/liminal/repo/narratological-algorithmic-lenses")
+PROJECTS_JSON = Path("~/Workspace/intake/data-2026-02-16-00-20-00-batch-0000/projects.json")
+REPO_ROOT = Path("~/world/realm/create/org/liminal/repo/narratological-algorithmic-lenses")
 PROJECT_UUID = "019be5ff-cb43-77b2-8078-ac2adff3a15d"
 
 # Map: (doc_index, destination_path)

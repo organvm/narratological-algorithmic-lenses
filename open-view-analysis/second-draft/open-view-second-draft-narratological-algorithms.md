@@ -1,6 +1,6 @@
 # Open View (Second Draft): Narratological Algorithm Distillation
 
-> Systematic extraction of narrative principles, structural patterns, and implementable frameworks from Anthony Padavano's *Open View* screenplay (Second Draft, October 2019). This document reverse-engineers the script's implicit narratological mechanics into formal, reproducible protocols.
+> Systematic extraction of narrative principles, structural patterns, and implementable frameworks from [name redacted]'s *Open View* screenplay (Second Draft, October 2019). This document reverse-engineers the script's implicit narratological mechanics into formal, reproducible protocols.
 
 ---
 

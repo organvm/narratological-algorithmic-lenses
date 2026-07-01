@@ -1,6 +1,6 @@
 Title: EL
 Credit: written by
-Author: Anthony Padavano
+Author: [name redacted]
 Draft Date: 2018 Q3
 Revision: Fourth Draft
 

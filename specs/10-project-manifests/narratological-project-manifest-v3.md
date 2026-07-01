@@ -951,7 +951,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-001` |
 | **Title** | Building narratological algorithms from cinema and games |
-| **URL** | https://claude.ai/chat/a31d8914-aacb-4a69-b8aa-4341532390d8 |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-25T03:49:06Z |
 | **Tags** | `PLANNING`, `STUDY_GUIDE`, `MULTI-MEDIA` |
 
@@ -969,7 +969,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-002` |
 | **Title** | Research roles and documents for artistic analysis |
-| **URL** | https://claude.ai/chat/a90dd864-6a46-455e-812f-f63fc402425f |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-25T03:44:19Z |
 | **Tags** | `METHODOLOGY`, `FEEDBACK_ROLES`, `TEMPLATES` |
 
@@ -985,7 +985,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-003` |
 | **Title** | Comprehensive script analysis and dramaturgical breakdown |
-| **URL** | https://claude.ai/chat/04db480d-969c-4194-9b7d-6d8360bddf5a |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-24T14:15:46Z |
 | **Tags** | `SKILL_CREATION`, `ANALYSIS`, `DRAMATURGICAL` |
 
@@ -1003,7 +1003,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-004` |
 | **Title** | First draft feedback on open view |
-| **URL** | https://claude.ai/chat/1e323a77-3cca-42ec-b13b-f9d9f1472b40 |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-24T13:49:44Z |
 | **Tags** | `CREATIVE_WORK`, `FEEDBACK`, `STRUCTURAL_ANALYSIS` |
 
@@ -1020,7 +1020,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-005` |
 | **Title** | Attention economy across media forms |
-| **URL** | https://claude.ai/chat/f2c43556-1781-41ce-beab-7a966df084bc |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-24T04:24:07Z |
 | **Tags** | `META_THEORY`, `ATTENTION`, `CROSS-MEDIA` |
 
@@ -1037,7 +1037,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-006` |
 | **Title** | Tarantino's genre taxonomy and creative methodology |
-| **URL** | https://claude.ai/chat/eb967bd0-08fe-426c-96bc-3b1b6005ef3e |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-24T02:54:33Z |
 | **Tags** | `RESEARCH`, `FILM`, `GENRE`, `TARANTINO` |
 
@@ -1055,7 +1055,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-007` |
 | **Title** | Narratological algorithms from artistic principles |
-| **URL** | https://claude.ai/chat/76b614bf-5745-4a16-aa96-e182bcf75a1e |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-24T02:29:04Z |
 | **Tags** | `SKILL_CREATION`, `METHODOLOGY`, `CORE` |
 
@@ -1072,7 +1072,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-008` |
 | **Title** | Bharata-Muni's narrative principles as algorithms |
-| **URL** | https://claude.ai/chat/ff7e1f3a-d051-47f2-9593-21b1923da9d5 |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-23T15:55:11Z |
 | **Tags** | `CLASSICAL`, `INDIAN`, `RASA`, `NATYASASTRA` |
 
@@ -1090,7 +1090,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-009` |
 | **Title** | Bharata-Muni's narrative principles as algorithms |
-| **URL** | https://claude.ai/chat/3c65d363-16db-4299-80ef-7053419c166f |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-23T15:27:49Z |
 | **Tags** | `CLASSICAL`, `INDIAN`, `PERFORMANCE`, `NATYASASTRA` |
 
@@ -1107,7 +1107,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-010` |
 | **Title** | Horace's poetic principles as narrative algorithms |
-| **URL** | https://claude.ai/chat/72c5caf7-f83e-486b-8614-a313aa232af6 |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-23T05:01:22Z |
 | **Tags** | `CLASSICAL`, `ROMAN`, `CRAFT` |
 
@@ -1124,7 +1124,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-011` |
 | **Title** | Plato's principles as narratological algorithms |
-| **URL** | https://claude.ai/chat/0f8f5311-ea85-4b93-bd05-94e1e38e8651 |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-23T04:36:07Z |
 | **Tags** | `CLASSICAL`, `GREEK`, `PHILOSOPHY`, `MIMESIS` |
 
@@ -1141,7 +1141,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-012` |
 | **Title** | Aristotle's poetics as narrative algorithms |
-| **URL** | https://claude.ai/chat/50cf10b3-ea99-4725-843b-ce3f7cc2e095 |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-23T04:32:57Z |
 | **Tags** | `CLASSICAL`, `GREEK`, `FOUNDATIONAL` |
 
@@ -1158,7 +1158,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-013` |
 | **Title** | Kubrick's non-submersible narrative units |
-| **URL** | https://claude.ai/chat/4322269d-4c9d-47aa-8ad6-3754a0b98bbb |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-22T22:50:19Z |
 | **Tags** | `RESEARCH`, `FILM`, `KUBRICK`, `ADAPTATION` |
 
@@ -1175,7 +1175,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-014` |
 | **Title** | Narratological algorithms from layered obstacles |
-| **URL** | https://claude.ai/chat/e1cd0d3b-e3ce-46df-8d35-1c2b31153a9f |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-22T21:47:50Z |
 | **Tags** | `ALGO`, `TELEVISION`, `SCENE_DESIGN`, `PWB` |
 
@@ -1192,7 +1192,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-015` |
 | **Title** | South Park's narratological algorithms |
-| **URL** | https://claude.ai/chat/62b8433c-f529-4325-a7f1-00ab8494026f |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-22T21:38:25Z |
 | **Tags** | `ALGO`, `COMEDY`, `ANIMATION`, `CAUSALITY` |
 
@@ -1209,7 +1209,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-016` |
 | **Title** | David's comedic rules as narratological algorithms |
-| **URL** | https://claude.ai/chat/eb75fc65-ec3c-4fff-aa01-01b467bc4f47 |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-22T21:32:30Z |
 | **Tags** | `ALGO`, `COMEDY`, `TELEVISION`, `LARRY_DAVID` |
 
@@ -1226,7 +1226,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-017` |
 | **Title** | McKee's narratological algorithms |
-| **URL** | https://claude.ai/chat/03cdab5a-46c8-4b3f-ba4c-4aa6c1228c00 |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-22T21:00:23Z |
 | **Tags** | `ALGO`, `SCREENWRITING`, `MCKEE`, `FOUNDATIONAL` |
 
@@ -1243,7 +1243,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-018` |
 | **Title** | McKee's narrative principles formalized |
-| **URL** | https://claude.ai/chat/278248d2-9d64-47d5-a9f2-72da9f2a2971 |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-22T15:15:07Z |
 | **Tags** | `SOURCE_EXTRACTION`, `OCR`, `MCKEE` |
 
@@ -1260,7 +1260,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-019` |
 | **Title** | Scene complications as narrative protocol |
-| **URL** | https://claude.ai/chat/2a827cf1-5bbe-4234-b5f6-e86646c3a871 |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-22T14:42:06Z |
 | **Tags** | `RESEARCH`, `INITIAL`, `MULTI-TECHNIQUE` |
 
@@ -1279,7 +1279,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-020` |
 | **Title** | Claude project manifest with annotated bibliography |
-| **URL** | https://claude.ai/chat/fa97906a-7571-477a-9173-6083ee82b2b8 |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-25T09:18:03Z |
 | **Tags** | `MANIFEST`, `DOCUMENTATION`, `PROJECT_MANAGEMENT` |
 | **Added** | v3 (2026-02-15) |
@@ -1297,7 +1297,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-021` |
 | **Title** | Designing multi-lens protocols for project review |
-| **URL** | https://claude.ai/chat/beff0b1b-606f-4aa2-a85d-5ac1ddce5435 |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-25T10:21:38Z |
 | **Tags** | `PROTOCOL_DESIGN`, `METHODOLOGY`, `FRAMEWORK` |
 | **Added** | v3 (2026-02-15) |
@@ -1318,7 +1318,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-022` |
 | **Title** | Applying analysis protocols to creative work |
-| **URL** | https://claude.ai/chat/0afc882c-22e5-4c9d-abb9-e3c1731ea49f |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-25T21:43:10Z |
 | **Tags** | `SKILL_CREATION`, `PROTOCOL_IMPLEMENTATION`, `ARCHITECTURE` |
 | **Added** | v3 (2026-02-15) |
@@ -1338,7 +1338,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-023` |
 | **Title** | Script analysis for open view draft |
-| **URL** | https://claude.ai/chat/d07d1fce-806f-445e-9093-5d5eaececd58 |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-25T22:23:29Z |
 | **Tags** | `CREATIVE_WORK`, `P7_COMPREHENSIVE`, `ANALYSIS`, `OPEN_VIEW` |
 | **Added** | v3 (2026-02-15) |
@@ -1356,7 +1356,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-024` |
 | **Title** | Family trauma and mythological adaptation |
-| **URL** | https://claude.ai/chat/e76c911d-9ed4-4f01-88c6-f865049b2444 |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-26T20:57:34Z |
 | **Tags** | `CREATIVE_WORK`, `AUTOBIOGRAPHY`, `MYTHOLOGY`, `OPEN_VIEW`, `EL_SERIES` |
 | **Added** | v3 (2026-02-15) |
@@ -1374,7 +1374,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-025` |
 | **Title** | Enumerating fundamental narrative structures |
-| **URL** | https://claude.ai/chat/a72a4630-7655-4129-92ad-c8be69304e73 |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-01-27T03:37:11Z |
 | **Tags** | `RESEARCH`, `NARRATIVE_THEORY`, `ENUMERATION`, `COMPUTATIONAL` |
 | **Added** | v3 (2026-02-15) |
@@ -1392,7 +1392,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-026` |
 | **Title** | Organizing project manifest with file annotations |
-| **URL** | https://claude.ai/chat/c7a37811-618f-42c3-951a-0a7fa83adfef |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-02-05T00:09:55Z |
 | **Tags** | `MANIFEST`, `DOCUMENTATION`, `AMENDMENT` |
 | **Added** | v3 (2026-02-15) |
@@ -1410,7 +1410,7 @@ This project systematically extracts, formalizes, and organizes narrative craft 
 |-------|-------|
 | **ID** | `CT-027` |
 | **Title** | Balancing novelty against comparative analysis |
-| **URL** | https://claude.ai/chat/72996a9c-f6ab-4d51-bbd1-03267dfaa914 |
+| **URL** | [personal conversation link redacted] |
 | **Updated** | 2026-02-05T16:19:09Z |
 | **Tags** | `EPISTEMOLOGY`, `CRITIQUE`, `PROJECT_LIMITATIONS`, `METHODOLOGY` |
 | **Added** | v3 (2026-02-15) |

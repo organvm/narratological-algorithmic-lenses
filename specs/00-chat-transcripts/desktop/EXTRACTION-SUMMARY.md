@@ -2,7 +2,7 @@
 
 Extracted: 2026-02-15T19:56:21.128224
 
-Source: `/Users/4jp/Workspace/intake/data-2026-02-16-00-20-00-batch-0000/conversations.json`
+Source: `~/Workspace/intake/data-2026-02-16-00-20-00-batch-0000/conversations.json`
 
 Total conversations in export: 410
 

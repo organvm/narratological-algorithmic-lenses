@@ -1,6 +1,6 @@
 Title: EL
 Credit: written by
-Author: Anthony Padavano
+Author: [name redacted]
 Draft Date: 2019 Q1
 Revision: Fifth Draft
 

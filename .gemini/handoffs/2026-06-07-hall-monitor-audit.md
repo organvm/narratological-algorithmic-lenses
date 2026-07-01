@@ -2,12 +2,12 @@
 
 ## Scope Checked
 
-- Repo: `/Users/4jp/Code/organvm/narratological-algorithmic-lenses`
-- Origin: `git@github.com:a-organvm/narratological-algorithmic-lenses.git`
+- Repo: `~/Code/organvm/narratological-algorithmic-lenses`
+- Origin: `[email redacted]:a-organvm/narratological-algorithmic-lenses.git`
 - Gemini artifacts: `.gemini/plans`, `.gemini/handoffs`, `.gemini/worktrees`
 - Antigravity artifacts: `~/.local/share/gemini/antigravity-cli`
 - OpenCode artifacts: `.git/opencode`, `~/.local/share/opencode/log`, `~/.local/share/opencode/snapshot`
-- IRF registry: `/Users/4jp/Code/organvm/organvm-corpvs-testamentvm/INST-INDEX-RERUM-FACIENDARUM.md`
+- IRF registry: `~/Code/organvm/organvm-corpvs-testamentvm/INST-INDEX-RERUM-FACIENDARUM.md`
 
 ## Findings
 
