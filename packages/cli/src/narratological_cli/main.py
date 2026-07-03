@@ -1,6 +1,10 @@
 """Main CLI entry point for narratological analysis."""
 
 from typing import Annotated
+import logging
+import json
+import sys
+import click
 
 import typer
 from rich.console import Console
@@ -23,6 +27,30 @@ app.add_typer(generate.app, name="generate", help="Generate narrative structures
 app.add_typer(validate.app, name="validate", help="Validate data integrity")
 
 console = Console()
+
+class JSONFormatter(logging.Formatter):
+    """JSON structured logger formatter."""
+    def format(self, record: logging.LogRecord) -> str:
+        log_data = {
+            "timestamp": self.formatTime(record, self.datefmt),
+            "level": record.levelname,
+            "message": record.getMessage(),
+            "logger": record.name,
+        }
+        for key, value in record.__dict__.items():
+            if key not in ["args", "asctime", "created", "exc_info", "exc_text", "filename", "funcName", "levelname", "levelno", "lineno", "message", "module", "msecs", "msg", "name", "pathname", "process", "processName", "relativeCreated", "stack_info", "thread", "threadName", "taskName"]:
+                log_data[key] = value
+        
+        if record.exc_info:
+            log_data["exception"] = self.formatException(record.exc_info)
+        return json.dumps(log_data)
+
+logger = logging.getLogger("narratological_cli")
+logger.setLevel(logging.WARNING)
+_handler = logging.StreamHandler(sys.stderr)
+_handler.setFormatter(JSONFormatter())
+logger.addHandler(_handler)
+
 
 
 @app.command()
@@ -76,8 +104,19 @@ def main(
     from master storytellers including Bergman, Tarkovsky, Pixar, and more.
     """
     if verbose:
+        logger.setLevel(logging.INFO)
         console.print("[dim]Verbose mode enabled[/dim]")
 
 
+
 if __name__ == "__main__":
-    app()
+    try:
+        app()
+    except click.exceptions.Exit:
+        raise
+    except click.exceptions.Abort:
+        raise
+    except Exception as e:
+        logger.error(f"Unhandled exception in CLI: {e}", exc_info=True)
+        console.print(f"[bold red]An unexpected error occurred:[/bold red] {e}", err=True)
+        sys.exit(1)
