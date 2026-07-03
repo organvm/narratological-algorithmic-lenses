@@ -11,7 +11,7 @@ router = APIRouter()
 class SceneAnalysisRequest(BaseModel):
     """Request model for scene analysis."""
 
-    text: str = Field(..., description="Scene text to analyze")
+    text: str = Field(..., min_length=1, max_length=100000, description="Scene text to analyze")
     framework: str | None = Field(None, description="Framework/study to apply")
 
 
@@ -28,9 +28,9 @@ class SceneAnalysisResponse(BaseModel):
 class ScriptUploadRequest(BaseModel):
     """Request model for script upload."""
 
-    title: str = Field(..., description="Script title")
-    content: str = Field(..., description="Script content")
-    format: str = Field("Feature", description="Script format")
+    title: str = Field(..., min_length=1, max_length=255, description="Script title")
+    content: str = Field(..., min_length=1, max_length=5000000, description="Script content")
+    format: str = Field("Feature", min_length=1, max_length=50, description="Script format")
 
 
 class AnalysisStatusResponse(BaseModel):
@@ -167,11 +167,11 @@ async def get_character_atlas(analysis_id: str) -> dict[str, Any]:
 class ScriptDoctorRequest(BaseModel):
     """Request model for Script Doctor consultation."""
 
-    content: str = Field(..., description="Script content (Fountain or text)")
-    primary_id: str = Field(..., description="ID of the primary study")
-    secondary_id: str = Field(..., description="ID of the secondary study")
+    content: str = Field(..., min_length=1, max_length=5000000, description="Script content (Fountain or text)")
+    primary_id: str = Field(..., min_length=1, max_length=100, description="ID of the primary study")
+    secondary_id: str = Field(..., min_length=1, max_length=100, description="ID of the secondary study")
     debate_mode: bool = Field(False, description="Enable exhaustive debate mode")
-    provider: str = Field("ollama", description="LLM provider")
+    provider: str = Field("ollama", min_length=1, max_length=50, description="LLM provider")
     model: str | None = Field(None, description="LLM model")
 
 
