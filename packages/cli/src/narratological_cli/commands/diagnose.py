@@ -69,7 +69,7 @@ def _display_diagnostic_result(
 def diagnose_causal_binding(
     script_path: Annotated[
         Path,
-        typer.Argument(help="Path to script file or beat map JSON"),
+        typer.Argument(help="Path to script file or beat map JSON", exists=True, file_okay=True, dir_okay=False, readable=True),
     ],
     target: Annotated[
         float,
@@ -137,7 +137,7 @@ def diagnose_causal_binding(
 def diagnose_reorderability(
     script_path: Annotated[
         Path,
-        typer.Argument(help="Path to script file or beat map JSON"),
+        typer.Argument(help="Path to script file or beat map JSON", exists=True, file_okay=True, dir_okay=False, readable=True),
     ],
     provider: Annotated[
         str,
@@ -196,7 +196,7 @@ def diagnose_reorderability(
 def diagnose_necessity(
     script_path: Annotated[
         Path,
-        typer.Argument(help="Path to script file or beat map JSON"),
+        typer.Argument(help="Path to script file or beat map JSON", exists=True, file_okay=True, dir_okay=False, readable=True),
     ],
     provider: Annotated[
         str,
@@ -255,7 +255,7 @@ def diagnose_necessity(
 def diagnose_with_framework(
     script_path: Annotated[
         Path,
-        typer.Argument(help="Path to script file or beat map JSON"),
+        typer.Argument(help="Path to script file or beat map JSON", exists=True, file_okay=True, dir_okay=False, readable=True),
     ],
     study_id: Annotated[
         str,
@@ -353,7 +353,7 @@ def diagnose_with_framework(
 def diagnose_all(
     script_path: Annotated[
         Path,
-        typer.Argument(help="Path to script file or beat map JSON"),
+        typer.Argument(help="Path to script file or beat map JSON", exists=True, file_okay=True, dir_okay=False, readable=True),
     ],
     output: Annotated[
         Path | None,
