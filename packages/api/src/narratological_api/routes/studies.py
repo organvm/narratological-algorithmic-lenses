@@ -10,7 +10,7 @@ from narratological.models.study import Category
 router = APIRouter()
 
 CATEGORY_FILTER = Query(None, description="Filter by category")
-SEARCH_QUERY = Query(..., description="Search query")
+SEARCH_QUERY = Query(..., min_length=1, max_length=100, description="Search query")
 SEARCH_LIMIT = Query(20, ge=1, le=100, description="Max results")
 
 
