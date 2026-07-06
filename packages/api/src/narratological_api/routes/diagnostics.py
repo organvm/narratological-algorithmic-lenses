@@ -13,6 +13,8 @@ class CausalBindingRequest(BaseModel):
 
     scenes: list[dict[str, Any]] = Field(
         ...,
+        min_length=1,
+        max_length=5000,
         description="List of scenes with connectors",
     )
 
