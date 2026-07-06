@@ -395,7 +395,8 @@ def _customer_email_from_session(session: dict[str, Any]) -> str | None:
 
 
 def _handle_checkout_completed(session: dict[str, Any]) -> BillingWebhookResult:
-    metadata = session.get("metadata") if isinstance(session.get("metadata"), dict) else {}
+    _metadata = session.get("metadata")
+    metadata: dict[str, Any] = _metadata if isinstance(_metadata, dict) else {}
     tier = _coerce_tier(metadata.get("tier"))
     session_id = _coerce_stripe_id(session.get("id"))
     if tier is None or session_id is None:
@@ -427,7 +428,8 @@ def _handle_subscription_event(event_type: str, subscription: dict[str, Any]) ->
     if not subscription_id:
         return BillingWebhookResult(event_type=event_type, action="ignored_missing_subscription")
 
-    metadata = subscription.get("metadata") if isinstance(subscription.get("metadata"), dict) else {}
+    _metadata = subscription.get("metadata")
+    metadata: dict[str, Any] = _metadata if isinstance(_metadata, dict) else {}
     tier = _coerce_tier(metadata.get("tier"))
     status_value = subscription.get("status")
     status = status_value if isinstance(status_value, str) else "inactive"
