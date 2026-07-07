@@ -7,13 +7,38 @@ interface StudySummary {
   category: string;
 }
 
+interface ScriptDoctorPair {
+  theme: string;
+  primary_id: string;
+  secondary_id: string;
+}
+
+interface DebateRound {
+  round: string;
+  content: string;
+}
+
+interface DialogueEntry {
+  creator: string;
+  feedback: string;
+}
+
+interface ScriptDoctorResult {
+  pair: ScriptDoctorPair;
+  debate_rounds?: DebateRound[];
+  dialogue: DialogueEntry[];
+  joint_recommendations: string[];
+  creative_tension: string[];
+  final_prescription: string;
+}
+
 export const ScriptDoctorWorkbench: React.FC = () => {
   const [content, setContent] = useState('');
   const [studies, setStudies] = useState<StudySummary[]>([]);
   const [primaryId, setPrimaryId] = useState('');
   const [secondaryId, setSecondaryId] = useState('');
   const [debateMode, setDebateMode] = useState(false);
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<ScriptDoctorResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -39,15 +64,15 @@ export const ScriptDoctorWorkbench: React.FC = () => {
     setResult(null);
 
     try {
-      const response = await api.post('/analysis/script-doctor', {
+      const response = await api.post<ScriptDoctorResult>('/analysis/script-doctor', {
         content,
         primary_id: primaryId,
         secondary_id: secondaryId,
         debate_mode: debateMode,
       });
       setResult(response);
-    } catch (err: any) {
-      setError(err.message || 'Analysis failed');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Analysis failed');
     } finally {
       setLoading(false);
     }
@@ -149,7 +174,7 @@ export const ScriptDoctorWorkbench: React.FC = () => {
               {result.debate_rounds && (
                 <div className="debate-rounds space-y-4">
                   <h3 className="text-md font-bold uppercase tracking-wider text-gray-500 border-b pb-1">Dialectical Rounds</h3>
-                  {result.debate_rounds.map((round: any, i: number) => (
+                  {result.debate_rounds.map((round, i) => (
                     <div key={i} className="round bg-yellow-50 p-4 rounded border border-yellow-100 shadow-sm">
                       <h4 className="font-bold text-yellow-900 mb-2">{round.round}</h4>
                       <p className="text-sm text-yellow-800 leading-relaxed whitespace-pre-wrap">{round.content}</p>
@@ -160,7 +185,7 @@ export const ScriptDoctorWorkbench: React.FC = () => {
 
               <div className="collaborative-dialogue space-y-4">
                 <h3 className="text-md font-bold uppercase tracking-wider text-gray-500 border-b pb-1">Joint Consultation</h3>
-                {result.dialogue.map((entry: any, i: number) => (
+                {result.dialogue.map((entry, i) => (
                   <div key={i} className={`dialogue-entry p-4 rounded-lg ${i % 2 === 0 ? 'bg-blue-50 ml-4' : 'bg-green-50 mr-4'}`}>
                     <span className="block font-bold text-xs uppercase mb-1 opacity-60">{entry.creator}</span>
                     <p className="text-sm italic text-gray-800">{entry.feedback}</p>

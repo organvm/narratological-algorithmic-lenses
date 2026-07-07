@@ -500,8 +500,8 @@ Provide analysis as a JSON object."""
 
 @app.command("compare")
 def compare_scripts(
-    script_a: Annotated[Path, typer.Argument(help="First script")],
-    script_b: Annotated[Path, typer.Argument(help="Second script")],
+    script_a: Annotated[Path, typer.Argument(help="First script", exists=True, file_okay=True, dir_okay=False, readable=True)],
+    script_b: Annotated[Path, typer.Argument(help="Second script", exists=True, file_okay=True, dir_okay=False, readable=True)],
     provider: Annotated[
         str,
         typer.Option("--provider", "-p", help=PROVIDER_OPTION_HELP),
@@ -603,7 +603,7 @@ def compare_scripts(
 def batch_analyze(
     directory: Annotated[
         Path,
-        typer.Argument(help="Directory containing scripts"),
+        typer.Argument(help="Directory containing scripts", exists=True, file_okay=False, dir_okay=True, readable=True),
     ],
     pattern: Annotated[
         str,
@@ -761,7 +761,7 @@ def _display_script_doctor_result(result) -> None:
 def script_doctor(
     script_path: Annotated[
         Path,
-        typer.Argument(help="Path to script file"),
+        typer.Argument(help="Path to script file", exists=True, file_okay=True, dir_okay=False, readable=True),
     ],
     sequence: Annotated[
         str | None,
