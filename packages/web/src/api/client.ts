@@ -149,7 +149,7 @@ export const api = {
     const url = path.startsWith('/') ? `${API_BASE}${path}` : `${API_BASE}/${path}`
     return fetchJson<T>(url)
   },
-  post: async <T>(path: string, body: any): Promise<T> => {
+  post: async <T>(path: string, body: unknown): Promise<T> => {
     const url = path.startsWith('/') ? `${API_BASE}${path}` : `${API_BASE}/${path}`
     const response = await fetch(url, {
       method: 'POST',

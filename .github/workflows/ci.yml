@@ -51,5 +51,11 @@ jobs:
       - name: Run web tests
         run: npm run web:test
 
+      - name: Run web linter
+        run: npm run lint -w packages/web
+
+      - name: Run web typecheck
+        run: npm run typecheck -w packages/web
+
       - name: Build web application
         run: npm run web:build

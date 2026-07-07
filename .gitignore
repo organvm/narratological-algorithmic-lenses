@@ -51,6 +51,7 @@ dmypy.json
 
 # Node.js
 node_modules/
+*.tsbuildinfo
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -96,4 +97,3 @@ temp/
 
 # Gemini Workspace Tooling
 .gemini/worktrees/
-
